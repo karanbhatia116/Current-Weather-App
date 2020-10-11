@@ -9,7 +9,7 @@ body{
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	background:linear-gradient(rgb(47,150,163),rgb(48,62,143));
+	background:linear-gradient(rgb(48,150,163),rgb(49,62,143));
 	font-family: sans-serif;
 	color:white;
 }
@@ -29,9 +29,9 @@ body{
 	cursor: pointer;
 }
 .degree-section span{
-	margin: 10px;
-	font-size: 30px;
+	margin: 11px;
+	font-size: 31px;
 }
 .degree-section h2{
-	font-size: 40px;
+	font-size: 41px;
 }
