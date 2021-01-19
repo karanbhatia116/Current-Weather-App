@@ -1,6 +1,8 @@
 window.addEventListener('load',()=>{
 	var long;
 	var lat;
+	//secret_key from darksky.net 
+	console.log(secret_key);
 	var tempDescription = document.querySelector('.temp-description');
 	var degreeSection = document.querySelector('.degree-section');
 	var tempDegree = document.querySelector('.temp-degree');
@@ -11,7 +13,7 @@ window.addEventListener('load',()=>{
 		  long = position.coords.longitude;
 		  lat = position.coords.latitude;
 		  const proxy = 'https://cors-anywhere.herokuapp.com/'
-		  const api = `${proxy}https://api.darksky.net/forecast/4b01e50d03333ddc69606268ac49652b/${lat},${long}`;
+		  const api = `${proxy}https://api.darksky.net/forecast/${secret_key}/${lat},${long}`;
 		  	fetch(api).then(response=>{
 			return response.json();
 		}).then(data=>{
@@ -41,7 +43,19 @@ window.addEventListener('load',()=>{
 
 	}
 	function setIcons(icon,iconID){
-		const skycons = new Skycons({ color:"white" });
+		var colour = ''
+		if(icon==='clear-day')
+			colour = 'yellow';
+		else if(icon==='clear-night')
+			colour = 'white';
+		else if(icon==='rain')
+			colour = 'darkgray';
+		else if(icon==='partly-cloudy')
+			colour = 'lightgray';
+		else if(icon==='snow')
+			colour = 'snow';
+		
+		const skycons = new Skycons({ color:colour});
 		const currentIcon = icon.replace(/-/g,"_").toUpperCase();
 		skycons.play();
 		return skycons.set(iconID,Skycons[currentIcon]);
