@@ -9,24 +9,74 @@ body{
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	background:linear-gradient(rgb(48,150,163),rgb(49,62,143));
+	/* background:linear-gradient(rgb(48,150,163),#313e8f); */
+	background: linear-gradient(#64d4c0, #65d0e0);
 	font-family: sans-serif;
-	color:white;
-}
-.location,.temp{
-	height:30vh;
-	width:50%;
+	color: #426696;
 	display: flex;
-	justify-content: space-around;
+	z-index: 1;
+}
+.glass{
+	/* background-color: linear-gradient(to top right, rgba(255,255,255,1), rgba(255,255,255,1)); */
+	background:linear-gradient(to right bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.7));
+	min-height: 66vh;
+	width:45%;
+	justify-content: center;
+	display: flex;
 	align-items: center;
+	border-radius: 2em;
+	z-index: 3;
+	backdrop-filter: blur(1.5rem);
+}
+.circle1, .circle2{
+	background: linear-gradient(to right bottom, rgba(255,255,255, 0.8), rgba(255,255,255,0.3));
+	position: absolute;
+	height:14rem;
+	width: 14rem;;
+	border-radius: 50%;
+}
+.circle1{
+	left: 18%;
+	bottom: 8%;
+}
+.circle2{
+	right:22%;
+	top:7%;
+}
+.location,.temp, .icon-container{
+	height:30vh;
+	display: flex;
+	flex:1;
+	opacity: 0.8;
+	justify-content: space-around;
+}
+.icon-container{
+	flex:0.6;
+	justify-content: center;
+}
+.location{
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+.icon{
+	height: 128px;
+	width: 128px;
+	color:white;
+	/* margin-left: 2em; */
 }
 .temp{
 	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+
 }
 .degree-section{
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	margin-left: 2em;
 }
 .degree-section span{
 	margin: 11px;
